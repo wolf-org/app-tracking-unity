@@ -19,8 +19,5 @@
     "Firebase Analytic"
   ],
   "dependencies": {
-    "com.pancake.adjust": "https://github.com/pancake-llc/adjust.git#4.37.1",
-    "appsflyer-unity-adrevenue-generic-connector": "https://github.com/AppsFlyerSDK/appsflyer-unity-adrevenue-generic-connector.git#v6.9.42-upm",
-    "appsflyer-unity-plugin": "https://github.com/AppsFlyerSDK/appsflyer-unity-plugin.git#v6.12.22"
   }
 }
