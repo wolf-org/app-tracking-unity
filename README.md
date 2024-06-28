@@ -33,7 +33,7 @@ for version `1.0.0`
 
 #### Firebase Tracking
 
-- Add define symbols `VIRTUESKY_FIREBASE_ANALYTIC` to use
+- Add define symbols `VIRTUESKY_FIREBASE_ANALYTIC` to use ([Get Firebase Analytic Sdk](https://github.com/firebase-unity/firebase-analytics))
 - Tracking event
 ```csharp
     static void TrackEvent(string eventName)
@@ -95,7 +95,7 @@ Example
 
 #### Adjust Tracking
 
-- Add define symbol `VIRTUESKY_ADJUST` to use
+- Add define symbol `VIRTUESKY_ADJUST` to use ([Get Adjust Sdk](https://github.com/pancake-llc/adjust))
 - Tracking event
 
 ```csharp
@@ -125,7 +125,7 @@ Example
 
 #### AppsFlyer Tracking
 
-- Add define symbol `VIRTUESKY_APPSFLYER` to use
+- Add define symbol `VIRTUESKY_APPSFLYER` to use ([Get Appsflyer Sdk](https://github.com/AppsFlyerSDK/appsflyer-unity-plugin) , [Get AppsFlyer AdRevenue](https://github.com/AppsFlyerSDK/appsflyer-unity-adrevenue-generic-connector))
 - Tracking event
 
 ```csharp
