@@ -28,3 +28,197 @@ for version `1.0.0`
 ```csharp
 "com.wolf-package.tracking":"https://github.com/wolf-package/app-tracking-unity.git#1.0.0",
 ```
+
+## Use
+
+#### Firebase Tracking
+
+- Add define symbols `VIRTUESKY_FIREBASE_ANALYTIC` to use
+- Tracking event
+```csharp
+    static void TrackEvent(string eventName)
+    static void TrackEvent(string eventName, string parameterName, string parameterValue)
+    static void TrackEvent(string eventName, Dictionary<string, string> dictParameters)
+    static void TrackEvent(string eventName, Parameter[] parameters)
+```
+Example
+
+```csharp
+        void TrackNoParam()
+        {
+            FirebaseTracking.TrackEvent("WinGame");
+        }
+
+        /// <summary>
+        /// parameter_name: level
+        /// parameter_value: level_1
+        /// </summary>
+        void TrackOneParam()
+        {
+            FirebaseTracking.TrackEvent("WinGame", "level", "level_1");
+        }
+
+        void TrackHasPramDict()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("level", "level_1");
+            dict.Add("level", "level_2");
+            dict.Add("level", "level_3");
+            FirebaseTracking.TrackEvent("WinGame", dict);
+        }
+
+        void TrackHasPram()
+        {
+            Parameter[] parameters = new[]
+            {
+                new Parameter("level", "level_1"),
+                new Parameter("level", "level_2"),
+                new Parameter("level", "level_3")
+            };
+            FirebaseTracking.TrackEvent("WinGame", parameters);
+        }
+```
+
+- Tracking ads revenue
+
+```csharp
+    static void FirebaseAnalyticTrackRevenue(double value, string network, string unitId, string format, string adNetwork)
+```
+Example
+
+```csharp
+        void TrackingRevenue()
+        {
+            FirebaseAnalyticTrackingRevenue.FirebaseAnalyticTrackRevenue(...);
+        }
+```
+
+#### Adjust Tracking
+
+- Add define symbol `VIRTUESKY_ADJUST` to use
+- Tracking event
+
+```csharp
+    static void TrackEvent(string eventToken)
+```
+
+Example
+```csharp
+        void TrackingEventAdjust()
+        {
+            AdjustTracking.TrackEvent("asdwdsfwa");
+        }
+```
+
+- Tracking ads revenue
+```csharp
+    static void AdjustTrackRevenue(double value, string network, string unitId, string placement, string adNetwork)
+```
+Example
+
+```csharp
+        void TrackingRevenue()
+        {
+            AdjustTrackingRevenue.AdjustTrackRevenue(...);
+        }
+```
+
+#### AppsFlyer Tracking
+
+- Add define symbol `VIRTUESKY_APPSFLYER` to use
+- Tracking event
+
+```csharp
+    static void TrackEvent(string eventName)
+    static void TrackEvent(string eventName, string parameterName, string parameterValue)
+    static void TrackEvent(string eventName, Dictionary<string, string> eventValues)
+```
+
+Example
+
+```csharp
+        void TrackNoParam()
+        {
+            AppsFlyerTracking.TrackEvent("WinGame");
+        }
+
+        /// <summary>
+        /// parameter_name: level
+        /// parameter_value: level_1
+        /// </summary>
+        void TrackOneParam()
+        {
+            AppsFlyerTracking.TrackEvent("WinGame", "level", "level_1");
+        }
+
+        void TrackHasPramDict()
+        {
+            Dictionary<string, string> dict = new Dictionary<string, string>();
+            dict.Add("level", "level_1");
+            dict.Add("level", "level_2");
+            dict.Add("level", "level_3");
+            AppsFlyerTracking.TrackEvent("WinGame", dict);
+        }
+```
+- Tracking ads revenue
+
+```csharp
+    static void AppsFlyerTrackRevenueAd(double value, string network, string unitId, string format, string adNetwork)
+```
+
+Example
+
+```csharp
+        void TrackingRevenue()
+        {
+            AppsFlyerTrackingRevenue.AppsFlyerTrackRevenueAd(...);
+        }
+```
+- Tracking iap revenue
+Add define symbol `VIRTUESKY_IAP` to use
+```csharp
+    static void AppFlyerTrackingRevenueInAppPurchase(Product product)
+```
+
+Example
+```csharp
+        void TrackingRevenue(Product productIAP)
+        {
+            AppsFlyerTrackingRevenue.AppFlyerTrackingRevenueInAppPurchase(productIAP);
+        }
+```
+#### App Tracking
+
+- Tracking ad revenue (If calling `Track Revenue` through `App Tracking`, revenue will be tracked in all of Firebase Analytics, Adjust, and AppsFlyer)
+```csharp
+    static void TrackRevenue(double value, string network, string unitId, string format, string adNetwork)
+```
+
+Example
+
+```csharp
+        void TrackingRevenue()
+        {
+            AppTracking.TrackRevenue(...);
+        }
+```
+
+- Firebase tracking ATT Results IOS (App Tracking Transparency) 
+- Require: `"com.unity.ads.ios-support": "1.2.0"`
+
+```csharp
+    static void FirebaseAnalyticTrackATTResult(int status)
+```
+
+Example
+
+```csharp
+        void AppTrackingTransparency()
+        {
+            if (ATTrackingStatusBinding.GetAuthorizationTrackingStatus() ==
+                ATTrackingStatusBinding.AuthorizationTrackingStatus.NOT_DETERMINED)
+            {
+                ATTrackingStatusBinding.RequestAuthorizationTracking(AppTracking.FirebaseAnalyticTrackATTResult);
+            }
+        }
+```

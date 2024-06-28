@@ -6,8 +6,8 @@ namespace VirtueSky.Tracking
 {
     public struct AdjustTrackingRevenue
     {
-        public static void AdjustTrackRevenue(double value, string network, string unitId,
-            string placement, string adNetwork)
+        public static void AdjustTrackRevenue(double value, string network, string unitId, string placement,
+            string adNetwork)
         {
 #if VIRTUESKY_ADJUST
             var source = "";

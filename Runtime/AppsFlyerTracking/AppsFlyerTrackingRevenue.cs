@@ -13,8 +13,8 @@ namespace VirtueSky.Tracking
 {
     public struct AppsFlyerTrackingRevenue
     {
-        public static void AppsFlyerTrackRevenueAd(double value, string network, string unitId,
-            string format, string adNetwork)
+        public static void AppsFlyerTrackRevenueAd(double value, string network, string unitId, string format,
+            string adNetwork)
         {
 #if VIRTUESKY_APPSFLYER
             var mediationNetworks = AppsFlyerAdRevenueMediationNetworkType

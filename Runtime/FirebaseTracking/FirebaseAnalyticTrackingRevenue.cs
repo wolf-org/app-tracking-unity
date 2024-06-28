@@ -6,8 +6,8 @@ namespace VirtueSky.Tracking
 {
     public struct FirebaseAnalyticTrackingRevenue
     {
-        public static void FirebaseAnalyticTrackRevenue(double value, string network, string unitId,
-            string format, string adNetwork)
+        public static void FirebaseAnalyticTrackRevenue(double value, string network, string unitId, string format,
+            string adNetwork)
         {
 #if VIRTUESKY_FIREBASE_ANALYTIC
             switch (adNetwork.ToLower())
