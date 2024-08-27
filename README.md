@@ -24,9 +24,9 @@
 
 ### Add the line below to `Packages/manifest.json`
 
-for version `1.0.1`
+for version `1.0.2`
 ```csharp
-"com.wolf-package.tracking":"https://github.com/wolf-package/app-tracking-unity.git#1.0.1",
+"com.wolf-org.tracking":"https://github.com/wolf-org/app-tracking-unity.git#1.0.2",
 ```
 
 ## Use
