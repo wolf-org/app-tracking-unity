@@ -2,12 +2,12 @@
     "name": "UnityCommon.Tracking",
     "rootNamespace": "",
     "references": [
-        "GUID:73cfe616a226dd64690d08b6164cb0e2",
         "GUID:2a37df438292d4903b4e5159c5de3bf9",
         "GUID:f019f7bff0f334be785bc738b9da2bfd",
         "GUID:60bfecf5cb232594891bc622f40d6bed",
         "GUID:94e1de2458b07d0bf1e9f13e6ae06443",
-        "GUID:e63a64384cc3ef04cac761c1ce76e9c2"
+        "GUID:e63a64384cc3ef04cac761c1ce76e9c2",
+        "GUID:7d8924c6e6beb44e18f19e8c0b5068cd"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
